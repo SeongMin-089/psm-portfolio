@@ -1,21 +1,24 @@
 import React from 'react'
-import "./styles/Skills.scss"
-import skill from '../../utils/skill'
+import './styles/Skills.scss'
+import skillsData from '../../utils/skill'
+
 const Skills = () => {
-  const profile = skills.basic
-  const skills = skills.skill
-  const exper = skills.experiences
-  const interests = skills.interests
+  const profile = skillsData.basic
+  const skills = skillsData.skill
+  const exper = skillsData.experiences
+  const interests = skillsData.interests
+
   return (
-    <div className='inner aboutme-inner'>
+    <div className="inner aboutme-inner">
       <h1 className="tit">
-        <span className="star-spin"><i className="star">✱</i></span>
-        aboutMe
+        <span className="star-spin">
+          <i className="star">✱</i>
+        </span>
+        skills
       </h1>
+
       <div className="t-wrap">
-        <h2 className="sub-tit">
-          profile
-        </h2>
+        <h2 className="sub-tit">profile</h2>
         <p className="txt">
           들어가는 최종 요소나 사용된다. <br />
           레이아웃 들어가는 로렘 부르며,
@@ -25,7 +28,7 @@ const Skills = () => {
 
       <div className="about-container">
         <div className="in-wrap profile-wrap">
-          <h4 className='list-lst'>profile</h4>
+          <h4 className="list-lst">profile</h4>
           <ul className="lst">
             <li>
               <strong>이름</strong>: {profile.name}
@@ -41,26 +44,29 @@ const Skills = () => {
             </li>
           </ul>
         </div>
+
         <div className="in-wrap skills-wrap">
-          <h4 className='list-lst'>Skills</h4>
+          <h4 className="list-lst">Skills</h4>
           <ul className="lst">
-            {skills.map((skill,i)=>(
+            {skills.map((skill, i) => (
               <li key={i}>{skill}</li>
             ))}
           </ul>
         </div>
+
         <div className="in-wrap exper-wrap">
-          <h4 className='list-lst'>      💼 Experiences</h4>
+          <h4 className="list-lst">💼 Experiences</h4>
           <ul className="lst">
-            {exper.map((exp,i)=>(
+            {exper.map((exp, i) => (
               <li key={i}>{exp}</li>
             ))}
           </ul>
         </div>
+
         <div className="in-wrap interests-wrap">
-          <h4 className='list-lst'>           🌱 Interests</h4>
+          <h4 className="list-lst">🌱 Interests</h4>
           <ul className="lst">
-            {interests.map((int,i)=>(
+            {interests.map((int, i) => (
               <li key={i}>{int}</li>
             ))}
           </ul>
