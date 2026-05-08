@@ -1,11 +1,11 @@
 import React from 'react'
-import "./styles/Aboutme.scss"
-import aboutMe from '../../utils/aboutme'
-const Aboutme = () => {
-  const profile = aboutMe.basic
-  const skills = aboutMe.skills
-  const exper = aboutMe.experiences
-  const interests = aboutMe.interests
+import "./styles/Skills.scss"
+import skill from '../../utils/skill'
+const Skills = () => {
+  const profile = skills.basic
+  const skills = skills.skill
+  const exper = skills.experiences
+  const interests = skills.interests
   return (
     <div className='inner aboutme-inner'>
       <h1 className="tit">
@@ -70,4 +70,4 @@ const Aboutme = () => {
   )
 }
 
-export default Aboutme
+export default Skills

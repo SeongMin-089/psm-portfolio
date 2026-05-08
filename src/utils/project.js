@@ -1,6 +1,6 @@
 // src/data/works.js
 const img = (path) => `/img/${path}`;
-const works = [
+const projects = [
   {
     id: "w-001",
     title: "Social Media Dashboard",
@@ -104,4 +104,4 @@ const works = [
   // 필요 개수만큼 추가
 ];
 
-export default works
+export default projects

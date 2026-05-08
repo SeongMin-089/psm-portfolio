@@ -6,7 +6,7 @@ section {
     overflow: hidden;
 
     // overflow: hidden;
-    &#Work {
+    &#Project {
         height: auto;
     }
 
@@ -20,7 +20,7 @@ section {
         }
     }
 
-    &#Aboutme {
+    &#Skills {
         @media screen and (max-width:1200px) {
             height: auto;
             min-height: auto;

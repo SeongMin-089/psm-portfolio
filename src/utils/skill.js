@@ -1,13 +1,13 @@
 // src/data/aboutMe.js
 
-const aboutMe = {
+const skills = {
   basic: {
     name: "홍길동",
     age: 29,
     location: "서울, 대한민국",
     mbti: "INTJ",
   },
-  skills: [
+  skill: [
     "JavaScript (ES6+)",
     "TypeScript",
     "React / Vue",
@@ -31,4 +31,4 @@ const aboutMe = {
   ],
 };
 
-export default aboutMe;
+export default skills;

@@ -1,8 +1,8 @@
 import React from 'react'
 import Hero from '../components/home/Hero'
-import Aboutme from '../components/home/Aboutme'
+import Skills from '../components/home/Skills'
 import Header from '../components/home/Header'
-import Work from '../components/home/Work'
+import Project from '../components/home/Project'
 import Contact from '../components/home/Contact'
 import Footer from '../components/home/Footer'
 const Home = () => {
@@ -12,15 +12,15 @@ const Home = () => {
     <div>
     
       <Header />
-      <main>
+      <main> 
         <section id='Hero'>
           <Hero />
         </section>
-        <section id="Aboutme">
-          <Aboutme />
+        <section id="Skills">
+          <Skills />
         </section>
-        <section id="Work">
-          <Work />
+        <section id="Project">
+          <Project />
         </section>
         <section id="Contact">
           <Contact />

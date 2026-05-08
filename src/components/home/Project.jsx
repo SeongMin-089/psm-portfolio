@@ -1,7 +1,7 @@
 import React from 'react'
-import works from '../../utils/works'
-import "./styles/Work.scss"
-const Work = () => {
+import projects from '../../utils/project'
+import "./styles/Project.scss"
+const Project = () => {
   return (
     <div className='inner work-inner'>
       <h3 className='sub-tit-2'>works.</h3>
@@ -34,4 +34,4 @@ const Work = () => {
   )
 }
 
-export default Work
+export default Project
