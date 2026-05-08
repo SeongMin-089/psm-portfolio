@@ -11,7 +11,7 @@ header {
         cursor: pointer;
         color: var(--text);
         transition: all .3s;
-        transform: translateY(3rem);
+        transform: translateY(3rem); 
         opacity: 0;
     }
 
@@ -89,7 +89,9 @@ header {
             nav ul {
                 display: flex;
                 gap: 2rem;
-                font-size: 1.4rem;
+                font-size: 1.6rem;
+                font-weight: 500;
+                color: var(--gray700);
 
                 @media screen and (max-width:768px) {
 
@@ -108,7 +110,7 @@ header {
                         >a {
                             padding: 2rem 0;
                             display: block;
-                            color: var(--gray900)
+                            color: var(--gray700)
                         }
 
                         &::after {

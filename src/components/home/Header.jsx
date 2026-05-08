@@ -42,7 +42,7 @@ const Header = () => {
             <span>3</span>
           </button>
           <Nav />
-          <button className='btn' onClick={toggleTheme}>{theme}</button>
+          <button className='btn' onClick={toggleTheme}>{theme === 'light' ? 'L' : 'D'}</button>
 
         </div>
       </div>
