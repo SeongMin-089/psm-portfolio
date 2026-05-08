@@ -1,27 +1,57 @@
 .inner.hero-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  height: 100vh;
+
+  h1.tit {
+    letter-spacing: -8%;
+    line-height: 13rem;
+  }
+
+  .gradient-text {
+    display: inline-block;
+    background: linear-gradient(
+      90deg,
+      #0f182e 0%,
+      #2155c7 48%,
+      #2d60ed 80%,
+      #1a3e8c 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  p.txt {
+    // position: absolute;
+    font-size: 2.8rem;
+    line-height: 5rem;
+    text-align: left;
+    right: 2rem;
+    bottom: 10rem;
+
+    @media screen and (max-width: 599px) {
+      font-size: 1.6rem;
+      // width:50%;
+    }
+    @media screen and (max-width: 399px) {
+      display: none;
+    }
+  }
+
+  .btn-wrap {
+    margin-top: 5.8rem;
     display: flex;
-    align-items: center;
-    height: 100vh;
+    gap: 1.8rem;
+  }
 
-    p.txt {
-        position: absolute;
-        text-align: right;
-        right: 2rem;
-        bottom: 10rem;
-
-        @media screen and (max-width:599px) {
-            font-size: 1.6rem;
-            // width:50%;
-        }
-                @media screen and (max-width:399px) {
-                    display: none;
-                }
-    }
-
-    .arrow {
-        position: absolute;
-        bottom: 3rem;
-        left: calc(50% - 1.5rem);
-        animation: up 1s infinite alternate ease-in-out;
-    }
+  .arrow {
+    position: absolute;
+    bottom: 3rem;
+    left: calc(50% - 1.5rem);
+    animation: up 1s infinite alternate ease-in-out;
+  }
 }

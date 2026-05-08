@@ -5,25 +5,20 @@ const Hero = () => {
     <div className='inner hero-inner'>
       <h1 className="tit">
         <span>
-          developer
+          박성민
         </span>
-        <span>
-
-          back <span className="star-spin"><i className="star">✱</i></span> front
-        </span>
-        <span>
-          portfolio
+        <span className="gradient-text">
+          Fullstack Developer
         </span>
       </h1>
       <p className="txt">
-        시맨틱 마크업을 통해 웹 접근성, <br />
-        웹 표준을 준수하여 차별이 없는 웹을 지향합니다. <br />
-        node express - react를 활용한 MERN 프로젝트를 지향하며, <br />
-        풀스택 전문가로써 성장과 도전을 지향합니다.
-    
+        사용자 경험과 시스템 구조를 함께 고민하는 개발자입니다. <br />
+        React와 Spring Boot 기반으로  실제 서비스 흐름을  설계하고 구현합니다.
       </p>
-      <div className="arrow">
-        ⬇
+      <div className="btn-wrap">
+      <button className='button-pr'>Project</button>
+      <button className='button-wh'>Contact</button>
+
       </div>
     </div>
   )
