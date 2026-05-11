@@ -18,117 +18,23 @@
     height: clamp(32rem, 36vw, 56rem);
     pointer-events: none;
     z-index: 1;
+    overflow: hidden;
+    border-radius: 3.2rem;
   }
 
-  .hero-orb,
-  .hero-dot,
-  .hero-line {
-    position: absolute;
+  .canvas {
+    width: 100% !important;
+    height: 100% !important;
     display: block;
-    will-change: transform, opacity;
-  }
-
-  .hero-orb {
-    border-radius: 50%;
-  }
-
-  .orb-1 {
-    width: clamp(16rem, 18vw, 28rem);
-    height: clamp(16rem, 18vw, 28rem);
-    right: 6rem;
-    top: 8rem;
-    background: radial-gradient(
-      circle at 35% 35%,
-      rgba(71, 255, 151, 0.75),
-      rgba(42, 95, 234, 0.32) 48%,
-      rgba(42, 95, 234, 0.06) 72%
-    );
-    filter: blur(0.2rem);
-  }
-
-  .orb-2 {
-    width: clamp(10rem, 12vw, 18rem);
-    height: clamp(10rem, 12vw, 18rem);
-    right: 0;
-    bottom: 8rem;
-    background: radial-gradient(
-      circle at 35% 35%,
-      rgba(42, 95, 234, 0.65),
-      rgba(71, 75, 230, 0.28) 55%,
-      rgba(71, 75, 230, 0.04) 75%
-    );
-    filter: blur(0.15rem);
-  }
-
-  .orb-3 {
-    width: clamp(7rem, 7vw, 12rem);
-    height: clamp(7rem, 7vw, 12rem);
-    left: 3rem;
-    top: 50%;
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.82),
-      rgba(42, 95, 234, 0.24)
-    );
-    border: 0.1rem solid rgba(42, 95, 234, 0.22);
-    backdrop-filter: blur(1rem);
-  }
-
-  .hero-dot {
-    width: 0.9rem;
-    height: 0.9rem;
-    border-radius: 50%;
-    background: #2a5fea;
-    opacity: 0.8;
-  }
-
-  .dot-1 {
-    right: 34rem;
-    top: 7rem;
-  }
-
-  .dot-2 {
-    right: 4rem;
-    top: 6rem;
-  }
-
-  .dot-3 {
-    left: 5rem;
-    bottom: 10rem;
-  }
-
-  .dot-4 {
-    right: 22rem;
-    bottom: 5rem;
-  }
-
-  .hero-line {
-    width: 18rem;
-    height: 0.1rem;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(42, 95, 234, 0.5),
-      transparent
-    );
-    transform-origin: center;
-  }
-
-  .line-1 {
-    right: 6rem;
-    top: 12rem;
-    transform: rotate(-22deg);
-  }
-
-  .line-2 {
-    left: 2rem;
-    bottom: 15rem;
-    transform: rotate(28deg);
   }
 
   h1.tit {
     letter-spacing: -0.07em;
     line-height: 0.95;
+
+    span {
+      display: block;
+    }
   }
 
   .gradient-text {
@@ -179,6 +85,8 @@
 
     .hero-content {
       width: 100%;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-visual {
@@ -188,6 +96,7 @@
       right: -8rem;
       bottom: 10rem;
       opacity: 0.28;
+      z-index: 1;
     }
   }
 

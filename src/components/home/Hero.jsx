@@ -1,68 +1,14 @@
-import React, { useEffect, useRef } from 'react'
-import gsap from 'gsap'
+import React from 'react'
 import './styles/Hero.scss'
 
+import { Canvas } from '@react-three/fiber'
+
+import Box from '../animation/Box'
+import GatsbyStars from '../animation/GatsbyStars'
+
 const Hero = () => {
-  const visualRef = useRef(null)
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.to('.orb-1', {
-        x: 18,
-        y: -16,
-        scale: 1.04,
-        duration: 4,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut',
-      })
-
-      gsap.to('.orb-2', {
-        x: -14,
-        y: 18,
-        scale: 0.96,
-        duration: 4.6,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut',
-      })
-
-      gsap.to('.orb-3', {
-        x: 10,
-        y: 12,
-        rotate: 8,
-        duration: 5.2,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut',
-      })
-
-      gsap.to('.hero-dot', {
-        opacity: 0.35,
-        scale: 1.6,
-        duration: 1.4,
-        repeat: -1,
-        yoyo: true,
-        stagger: 0.22,
-        ease: 'sine.inOut',
-      })
-
-      gsap.to('.hero-line', {
-        y: -8,
-        rotate: 2,
-        duration: 4.2,
-        repeat: -1,
-        yoyo: true,
-        stagger: 0.3,
-        ease: 'sine.inOut',
-      })
-    }, visualRef)
-
-    return () => ctx.revert()
-  }, [])
-
   return (
-    <div className="inner hero-inner">
+    <div id="hero" className="inner hero-inner">
       <div className="hero-content">
         <h1 className="tit">
           <span>박성민</span>
@@ -80,18 +26,17 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="hero-visual" ref={visualRef} aria-hidden="true">
-        <div className="hero-orb orb-1"></div>
-        <div className="hero-orb orb-2"></div>
-        <div className="hero-orb orb-3"></div>
+      <div className="hero-visual" aria-hidden="true">
+        <Canvas className="canvas" camera={{ position: [0, 0, 5], fov: 65 }}>
+          <color attach="background" args={['#000000']} />
 
-        <span className="hero-dot dot-1"></span>
-        <span className="hero-dot dot-2"></span>
-        <span className="hero-dot dot-3"></span>
-        <span className="hero-dot dot-4"></span>
+          <GatsbyStars />
 
-        <span className="hero-line line-1"></span>
-        <span className="hero-line line-2"></span>
+          <ambientLight intensity={0.7} />
+          <pointLight position={[10, 10, 10]} intensity={1.5} />
+
+          <Box position={[0, 0, 0]} scale={0.75} />
+        </Canvas>
       </div>
     </div>
   )
