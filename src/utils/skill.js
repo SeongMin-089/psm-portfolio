@@ -1,34 +1,77 @@
 const skills = {
-  basic: {
-    name: '홍길동',
-    age: 29,
-    location: '서울, 대한민국',
-    mbti: 'INTJ',
-  },
+  title: '서비스 구현을 위한 핵심 기술 스택',
+  description:
+    '프론트엔드부터 백엔드, 데이터베이스와 협업 도구까지 웹 서비스 구현에 필요한 핵심 기술 스택입니다.',
 
-  skill: [
-    'JavaScript (ES6+)',
-    'TypeScript',
-    'React / Vue',
-    'Node.js / Express',
-    'MongoDB / MySQL',
-    'HTML / CSS / Sass',
-    'Git / GitHub / GitFlow',
-  ],
-
-  experiences: [
-    '프론트엔드 개발 3년 경험 (SPA & 반응형 웹)',
-    '팀 프로젝트 협업 및 코드 리뷰 경험 다수',
-    'Figma, Notion 기반 기획/디자인 협업',
-    'AWS · Cloudtype 배포 경험',
-    '교육 및 멘토링 프로젝트 참여',
-  ],
-
-  interests: [
-    'UI/UX 디자인 트렌드 탐구',
-    '오픈소스 프로젝트 기여',
-    '개발 블로그 작성',
-    '스터디 운영 및 후배 개발자 멘토링',
+  categories: [
+    {
+      title: 'Frontend',
+      icon: '/img/front.svg',
+      items: [
+        {
+          name: 'React',
+          icon: '/img/react.svg',
+        },
+        {
+          name: 'HTML',
+          icon: '/img/html.svg',
+        },
+        {
+          name: 'JavaScript',
+          icon: '/img/js.svg',
+        },
+        {
+          name: 'Styling (CSS / SCSS)',
+          icon: '/img/css.svg',
+        },
+      ],
+    },
+    {
+      title: 'Backend',
+      icon: '/img/back.svg',
+      items: [
+        {
+          name: 'Java / JSP',
+          icon: '/img/java.svg',
+        },
+        {
+          name: 'Spring Boot / JPA',
+          icon: '/img/spring.svg',
+        },
+      ],
+    },
+    {
+      title: 'Database',
+      icon: '/img/db.svg',
+      items: [
+        {
+          name: 'MySQL / H2',
+          icon: '/img/mysql.svg',
+        },
+      ],
+    },
+    {
+      title: 'Tools',
+      icon: '/img/tool.svg',
+      items: [
+        {
+          name: 'Docker',
+          icon: '/img/docker.svg',
+        },
+        {
+          name: 'Figma',
+          icon: '/img/figma.svg',
+        },
+        {
+          name: 'Notion',
+          icon: '/img/notion.svg',
+        },
+        {
+          name: 'GitHub / Git',
+          icon: '/img/github.svg',
+        },
+      ],
+    },
   ],
 }
 

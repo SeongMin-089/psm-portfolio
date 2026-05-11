@@ -1,78 +1,53 @@
-import React from 'react'
-import './styles/Skills.scss'
-import skillsData from '../../utils/skill'
+import React from "react"
+import "./styles/Skills.scss"
+import skills from "../../utils/skill"
 
 const Skills = () => {
-  const profile = skillsData.basic
-  const skills = skillsData.skill
-  const exper = skillsData.experiences
-  const interests = skillsData.interests
-
   return (
-    <div className="inner aboutme-inner">
-      <h1 className="tit">
-        <span className="star-spin">
-          <i className="star">✱</i>
-        </span>
-        skills
-      </h1>
+    <section id="Skills">
+      <div className="inner skills-inner">
+        <div className="circle-line circle-left"></div>
+        <div className="circle-line circle-right"></div>
 
-      <div className="t-wrap">
-        <h2 className="sub-tit">profile</h2>
-        <p className="txt">
-          들어가는 최종 요소나 사용된다. <br />
-          레이아웃 들어가는 로렘 부르며,
-          <br /> 들어가는 최종 전에 프로젝트 사용할 사용된다.
-        </p>
-      </div>
-
-      <div className="about-container">
-        <div className="in-wrap profile-wrap">
-          <h4 className="list-lst">profile</h4>
-          <ul className="lst">
-            <li>
-              <strong>이름</strong>: {profile.name}
-            </li>
-            <li>
-              <strong>나이</strong>: {profile.age}
-            </li>
-            <li>
-              <strong>사는곳</strong>: {profile.location}
-            </li>
-            <li>
-              <strong>MBTI</strong>: {profile.mbti}
-            </li>
-          </ul>
+        <div className="section-badge">
+          <span className="section-badge-dot"></span>
+          <span className="section-badge-text">Skills</span>
         </div>
 
-        <div className="in-wrap skills-wrap">
-          <h4 className="list-lst">Skills</h4>
-          <ul className="lst">
-            {skills.map((skill, i) => (
-              <li key={i}>{skill}</li>
-            ))}
-          </ul>
+        <div className="skills-title-box">
+          <h2>{skills.title}</h2>
+          <p>{skills.description}</p>
         </div>
 
-        <div className="in-wrap exper-wrap">
-          <h4 className="list-lst">💼 Experiences</h4>
-          <ul className="lst">
-            {exper.map((exp, i) => (
-              <li key={i}>{exp}</li>
-            ))}
-          </ul>
-        </div>
+        <div className="skills-card-wrap">
+          {skills.categories.map((category) => (
+            <article className="skill-card" key={category.title}>
+              <div className="skill-card-title">
+                <img
+                  src={category.icon}
+                  alt=""
+                  className="skill-title-icon"
+                />
+                <strong>{category.title}</strong>
+              </div>
 
-        <div className="in-wrap interests-wrap">
-          <h4 className="list-lst">🌱 Interests</h4>
-          <ul className="lst">
-            {interests.map((int, i) => (
-              <li key={i}>{int}</li>
-            ))}
-          </ul>
+              <ul>
+                {category.items.map((item) => (
+                  <li key={item.name}>
+                    <img
+                      src={item.icon}
+                      alt={item.name}
+                      className="skill-icon"
+                    />
+                    <span>{item.name}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
