@@ -13,14 +13,16 @@
   }
 
   .hero-visual {
-    flex: 0 0 34%;
-    position: relative;
-    height: clamp(32rem, 36vw, 56rem);
-    pointer-events: none;
-    z-index: 1;
-    overflow: hidden;
-    border-radius: 3.2rem;
-  }
+  flex: 0 0 34%;
+  position: relative;
+  height: clamp(32rem, 36vw, 56rem);
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 3.2rem;
+  background: linear-gradient(135deg, #1b2a4a 0%, #16233f 48%, #0f1a33 100%);
+  box-shadow: 0 2.4rem 6rem rgba(42, 95, 234, 0.18);
+}
 
   .canvas {
     width: 100% !important;

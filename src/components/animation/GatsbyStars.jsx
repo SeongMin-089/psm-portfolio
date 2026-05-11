@@ -34,6 +34,7 @@ const GatsbyStars = () => {
         saturation={0} // 별 색상 채도, 0은 흰색 계열
         fade // 멀리 있는 별이 자연스럽게 흐려짐
         speed={1} // 별 애니메이션 속도
+        
       />
     </group>
   );

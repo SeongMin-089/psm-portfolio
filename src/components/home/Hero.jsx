@@ -4,6 +4,7 @@ import './styles/Hero.scss'
 import { Canvas } from '@react-three/fiber'
 
 import Box from '../animation/Box'
+import HeroOrbit from '../animation/HeroOrbit'
 import GatsbyStars from '../animation/GatsbyStars'
 
 const Hero = () => {
@@ -28,14 +29,15 @@ const Hero = () => {
 
       <div className="hero-visual" aria-hidden="true">
         <Canvas className="canvas" camera={{ position: [0, 0, 5], fov: 65 }}>
-          <color attach="background" args={['#000000']} />
+          <color attach="background" args={['#16233F']} />
 
           <GatsbyStars />
 
           <ambientLight intensity={0.7} />
           <pointLight position={[10, 10, 10]} intensity={1.5} />
 
-          <Box position={[0, 0, 0]} scale={0.75} />
+          {/* <Box position={[0, 0, 0]} scale={0.75} /> */}
+          <HeroOrbit />
         </Canvas>
       </div>
     </div>
