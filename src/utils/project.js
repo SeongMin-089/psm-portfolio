@@ -15,8 +15,7 @@ const projects = [
       { name: "Kakao Map", icon: "/img/kakao.svg" },
     ],
     links: {
-      notion: "노션링크",
-      demo: "배포링크",
+      notion: "https://www.notion.so/WiFi-Spot-31a81c8faa338049be8be905364ad32c?source=copy_link"
     },
   },
   {
@@ -35,8 +34,7 @@ const projects = [
       { name: "Responsive / Component UI", icon: "/img/responsive.svg" },
     ],
     links: {
-      notion: "노션링크",
-      demo: "배포링크",
+      notion: "https://www.notion.so/TOCOBO-31181c8faa338023b58ed2defa7497be?source=copy_link",
     },
   },
 ]
