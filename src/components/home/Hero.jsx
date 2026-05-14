@@ -1,13 +1,17 @@
-import React from 'react'
-import './styles/Hero.scss'
+import React from "react"
+import "./styles/Hero.scss"
 
-import { Canvas } from '@react-three/fiber'
+import { Canvas } from "@react-three/fiber"
 
-import Box from '../animation/Box'
-import HeroOrbit from '../animation/HeroOrbit'
-import GatsbyStars from '../animation/GatsbyStars'
+import Box from "../animation/Box"
+import HeroOrbit from "../animation/HeroOrbit"
+import GatsbyStars from "../animation/GatsbyStars"
+
+import useSmoothScroll from "../../hook/useSmoothScroll"
 
 const Hero = () => {
+  const scrollTo = useSmoothScroll()
+
   return (
     <div id="hero" className="inner hero-inner">
       <div className="hero-content">
@@ -22,14 +26,27 @@ const Hero = () => {
         </p>
 
         <div className="btn-wrap">
-          <button className="button-pr">Project</button>
-          <button className="button-wh">Contact</button>
+          <button
+            type="button"
+            className="button-pr"
+            onClick={() => scrollTo("Project")}
+          >
+            Project
+          </button>
+
+          <button
+            type="button"
+            className="button-wh"
+            onClick={() => scrollTo("Contact")}
+          >
+            Contact
+          </button>
         </div>
       </div>
 
       <div className="hero-visual" aria-hidden="true">
         <Canvas className="canvas" camera={{ position: [0, 0, 5], fov: 65 }}>
-          <color attach="background" args={['#16233F']} />
+          <color attach="background" args={["#16233F"]} />
 
           <GatsbyStars />
 

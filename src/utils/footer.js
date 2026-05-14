@@ -3,20 +3,20 @@ const footer = {
   brand: {
     name: "LOGO",
     logo: "/img/logo.svg", // public/img/logo.svg 기준
-    copy: `© ${new Date().getFullYear()} DECODE.Lab. All rights reserved.`,
+    copy: `${new Date().getFullYear()} ParkSeongMin PortFolio.`,
   },
   links: [
     {
       icon: "link", // material-icons 기준
       label: "GitHub",
-      value: "github.com/username",
-      href: "https://github.com/username",
+      value: "github.com/SeongMin-089",
+      href: "https://github.com/SeongMin-089",
     },
     {
       icon: "link",
       label: "Notion",
       value: "notion.site/portfolio",
-      href: "https://notion.site/portfolio",
+      href: "https://www.notion.so/35681c8faa33805595a7d089de178d8e?source=copy_link",
     },
     // {
     //   icon: "link",

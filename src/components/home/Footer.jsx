@@ -8,7 +8,6 @@ const Footer = () => {
     <footer>
       <div className='inner'>
         <div className="left">
-          <h2>{footer.brand.name}</h2>
           <p>
             {footer.brand.copy}
           </p>
