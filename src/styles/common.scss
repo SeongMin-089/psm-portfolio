@@ -35,19 +35,19 @@ section {
 
 }
 
+:root {
+  --container: 160rem;
+  --gutter: clamp(2rem, 4vw, 6rem);
+}
+
 header,
 section {
-    .inner {
-        position: relative;
-        max-width: 160rem;
-        height: 100%;
-        // min-height: 100vh;
+  .inner {
+    position: relative;
+    width: min(var(--container), calc(100% - var(--gutter) * 2));
+    height: 100%;
+    margin: 0 auto;
 
-        margin: auto;
-
-        @media screen and (max-width:1599px) {
-            padding: 1rem 2rem;
-        }
 
         .btn {
             background: var(--primary);
