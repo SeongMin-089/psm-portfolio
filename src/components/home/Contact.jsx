@@ -1,7 +1,10 @@
 import React from "react"
+import { useForm } from "@formspree/react"
 import "./styles/Contact.scss"
 
 const Contact = () => {
+  const [state, handleSubmit] = useForm(import.meta.env.VITE_FORMSPREE_ID)
+
   return (
     <section id="Contact">
       <div className="inner contact-inner">
@@ -15,7 +18,7 @@ const Contact = () => {
         </div>
 
         <div className="contact-content">
-          <form className="contact-form">
+          <form className="contact-form" onSubmit={handleSubmit}>
             <div className="contact-card-title">
               <h3>Send a Message</h3>
               <p>문의 내용을 남겨주시면 빠르게 답변드리겠습니다.</p>
@@ -25,7 +28,13 @@ const Contact = () => {
               <label htmlFor="name">Name</label>
               <div className="input-wrap">
                 <img src="/img/icon-user.svg" alt="" />
-                <input id="name" type="text" placeholder="Your name" />
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  required
+                />
               </div>
             </div>
 
@@ -33,7 +42,13 @@ const Contact = () => {
               <label htmlFor="email">Email</label>
               <div className="input-wrap">
                 <img src="/img/icon-mail.svg" alt="" />
-                <input id="email" type="email" placeholder="your@email.com" />
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="your@email.com"
+                  required
+                />
               </div>
             </div>
 
@@ -43,8 +58,10 @@ const Contact = () => {
                 <img src="/img/icon-edit.svg" alt="" />
                 <input
                   id="subject"
+                  name="subject"
                   type="text"
                   placeholder="Project / Subject"
+                  required
                 />
               </div>
             </div>
@@ -55,15 +72,27 @@ const Contact = () => {
                 <img src="/img/icon-message.svg" alt="" />
                 <textarea
                   id="message"
+                  name="message"
                   placeholder="작업 문의, 협업 제안, 질문 등을 자유롭게 남겨주세요."
+                  required
                 ></textarea>
               </div>
             </div>
 
-            <button type="submit" className="send-btn">
+            <button type="submit" className="send-btn" disabled={state.submitting}>
               <span>▷</span>
-              Send Message
+              {state.submitting ? "Sending..." : "Send Message"}
             </button>
+
+            {state.succeeded && (
+              <p className="form-success">메시지가 전송되었습니다.</p>
+            )}
+
+            {state.errors && (
+              <p className="form-error">
+                전송 중 오류가 발생했습니다. 다시 시도해주세요.
+              </p>
+            )}
           </form>
 
           <div className="contact-info">
@@ -105,7 +134,11 @@ const Contact = () => {
               </li>
 
               <li>
-                <a href="https://www.notion.so/35681c8faa33805595a7d089de178d8e?source=copy_link" target="_blank" rel="noreferrer">
+                <a
+                  href="https://www.notion.so/35681c8faa33805595a7d089de178d8e?source=copy_link"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <span className="info-icon">
                     <img src="/img/notion.svg" alt="" />
                   </span>
