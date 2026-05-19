@@ -61,7 +61,7 @@ const Header = () => {
           >
             <img src="/img/logo.svg" alt="박성민 포트폴리오 로고" />
           </a>
-            <h1>PSM Portfolio</h1>
+          <h1>PSM Portfolio</h1>
         </div>
 
         <div className="right-wrap">
@@ -69,6 +69,8 @@ const Header = () => {
             type="button"
             onClick={() => setMenuOpen((v) => !v)}
             className="mob-nav-btn"
+            aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
+            aria-expanded={menuOpen}
           >
             <span>1</span>
             <span>2</span>
