@@ -48,18 +48,22 @@ const Header = () => {
       className={`${scrolled ? "scroll" : "hero-mode"} ${menuOpen ? "is-open" : ""} `}
     >
       <div className="inner">
-        <a
-          href="#hero"
-          className="logo"
-          aria-label="홈으로 이동"
-          onClick={(e) => {
-            e.preventDefault()
-            scrollTo("hero")
-            setMenuOpen(false)
-          }}
-        >
-          <img src="/img/logo.svg" alt="박성민 포트폴리오 로고" />
-        </a>
+        <div className="left-wrap">
+          <a
+            href="#hero"
+            className="logo"
+            aria-label="홈으로 이동"
+            onClick={(e) => {
+              e.preventDefault()
+              scrollTo("hero")
+              setMenuOpen(false)
+            }}
+          >
+            <img src="/img/logo.svg" alt="박성민 포트폴리오 로고" />
+          </a>
+            <h1>PSM Portfolio</h1>
+        </div>
+
         <div className="right-wrap">
           <button
             type="button"

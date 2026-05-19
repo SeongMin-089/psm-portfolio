@@ -3,7 +3,7 @@ header {
   z-index: 5;
   width: 100%;
   transition: all 0.3s;
-  background: linear-gradient(180deg, #DDE7F4 18%, #F8FBFF 100%);
+  background-color: #eef6ff;
 
   .fixed-top {
     position: fixed;
@@ -34,15 +34,27 @@ header {
     align-items: center;
     padding: 1rem 0;
 
-    .logo {
-      display: inline-flex;
+    .left-wrap {
+      display: flex;
       align-items: center;
-      flex-shrink: 0;
+      gap: 3rem;
 
-      img {
-        display: block;
-        width: clamp(4rem, 7vw, 6.5rem);
-        height: auto;
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+  
+        img {
+          display: block;
+          width: clamp(4rem, 7vw, 6.5rem);
+          height: auto;
+        }
+      }
+      
+      h1 {
+        font-size: clamp(1.2rem, 5vw, 2.4rem);
+        font-weight: 900;
+        color: #2E3D5C;
       }
     }
 
@@ -66,7 +78,7 @@ header {
           font-size: 0;
           width: 100%;
           height: 0.2rem;
-          background-color: var(--text);
+          background-color: var(--gray700);
           left: 0;
           display: block;
           transition: all 0.3s;
@@ -123,11 +135,11 @@ header {
               height: 100%;
               left: 0;
               top: 0;
-              background-color: var(--gray900);
+              background-color: var(--primary200);
             }
 
             &:hover {
-              background-color: var(--gray900);
+              background-color: var(--primary200);
 
               > a {
                 color: var(--gray100);

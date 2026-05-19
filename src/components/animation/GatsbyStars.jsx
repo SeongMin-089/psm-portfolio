@@ -1,43 +1,84 @@
-import { useRef } from "react";
-import { useFrame } from "@react-three/fiber";
-import { Stars } from "@react-three/drei";
+import { useMemo, useRef } from "react"
+import { useFrame } from "@react-three/fiber"
+import * as THREE from "three"
 
-const GatsbyStars = () => {
-  // 별 전체 그룹에 접근하기 위한 ref
-  const starsRef = useRef(null);
+const GatsbyStars = ({ color = "#2a5fea" }) => {
+  const starsRef = useRef(null)
 
-  // 매 프레임마다 실행되는 애니메이션
+  const positions = useMemo(() => {
+    const count = 1800
+    const arr = new Float32Array(count * 3)
+
+    for (let i = 0; i < count; i++) {
+      arr[i * 3] = (Math.random() - 0.5) * 22
+      arr[i * 3 + 1] = (Math.random() - 0.5) * 12
+      arr[i * 3 + 2] = (Math.random() - 0.5) * 10
+    }
+
+    return arr
+  }, [])
+
+  const circleTexture = useMemo(() => {
+    const canvas = document.createElement("canvas")
+    canvas.width = 64
+    canvas.height = 64
+
+    const ctx = canvas.getContext("2d")
+    const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32)
+
+    gradient.addColorStop(0, "rgba(255, 255, 255, 1)")
+    gradient.addColorStop(0.35, "rgba(255, 255, 255, 0.9)")
+    gradient.addColorStop(1, "rgba(255, 255, 255, 0)")
+
+    ctx.fillStyle = gradient
+    ctx.beginPath()
+    ctx.arc(32, 32, 32, 0, Math.PI * 2)
+    ctx.fill()
+
+    const texture = new THREE.CanvasTexture(canvas)
+    texture.needsUpdate = true
+
+    return texture
+  }, [])
+
   useFrame((state, delta) => {
-    if (!starsRef.current) return;
+    if (!starsRef.current) return
 
-    const { mouse, camera } = state;
+    const { mouse, camera } = state
 
-    // 별 배경을 천천히 회전
-    starsRef.current.rotation.x += delta * 0.02;
-    starsRef.current.rotation.y += delta * 0.04;
+    starsRef.current.rotation.x += delta * 0.006
+    starsRef.current.rotation.y += delta * 0.018
 
-    // 마우스 위치에 따라 카메라를 부드럽게 이동
-    camera.position.x += (mouse.x * 1.5 - camera.position.x) * 0.03;
-    camera.position.y += (mouse.y * 1.5 - camera.position.y) * 0.03;
+    camera.position.x += (mouse.x * 0.35 - camera.position.x) * 0.02
+    camera.position.y += (mouse.y * 0.35 - camera.position.y) * 0.02
 
-    // 카메라가 항상 중앙을 바라보게 설정
-    camera.lookAt(0, 0, 0);
-  });
+    camera.lookAt(0, 0, 0)
+  })
 
   return (
-    <group ref={starsRef}>
-      <Stars
-        radius={100} // 별이 퍼지는 범위
-        depth={80} // 별 배경의 깊이감
-        count={7000} // 별 개수
-        factor={5} // 별 크기
-        saturation={0} // 별 색상 채도, 0은 흰색 계열
-        fade // 멀리 있는 별이 자연스럽게 흐려짐
-        speed={1} // 별 애니메이션 속도
-        
-      />
-    </group>
-  );
-};
+    <points ref={starsRef}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          count={positions.length / 3}
+          array={positions}
+          itemSize={3}
+        />
+      </bufferGeometry>
 
-export default GatsbyStars;
+      <pointsMaterial
+        color={color}
+        map={circleTexture}
+        size={0.045}
+        transparent
+        opacity={0.5}
+        alphaTest={0.01}
+        sizeAttenuation
+        depthWrite={false}
+        blending={THREE.NormalBlending}
+      />
+    </points>
+  )
+}
+
+export default GatsbyStars
