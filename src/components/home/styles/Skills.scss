@@ -134,7 +134,7 @@
 
 [data-theme="dark"] {
   #Skills {
-    .skills-badge {
+    .section-badge {
       background: rgba(255, 255, 255, 0.04);
       color: var(--text);
       box-shadow: none;
@@ -166,6 +166,9 @@
     .skills-card-wrap {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+    .section-badge {
+      margin-bottom: 2.6rem;
+    }
 
     .circle-left {
       left: -22rem;
@@ -182,6 +185,12 @@
     .skills-inner {
       padding-top: 8rem;
       padding-bottom: 8rem;
+    }
+
+    .section-badge {
+      margin-bottom: 2rem;
+      transform: scale(0.8);
+      transform-origin: center;
     }
 
     .skills-title-box {
