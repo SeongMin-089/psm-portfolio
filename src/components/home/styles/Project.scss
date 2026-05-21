@@ -191,7 +191,7 @@
 
   .project-visual {
     width: 100%;
-    height: clamp(38rem, 36vw, 62.6rem);
+    height: auto;
     border-radius: 4rem;
     overflow: hidden;
     background: transparent;
@@ -206,9 +206,9 @@
 
     img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
+      height: auto;
+      object-fit: initial;
+      object-position: initial;
       display: block;
     }
   }
@@ -243,7 +243,6 @@
     }
 
     .project-visual {
-      height: clamp(34rem, 38vw, 50rem);
       border-radius: 3.6rem;
     }
   }
@@ -269,16 +268,18 @@
     }
 
     .project-visual {
+      width: 100%;
       height: auto;
-      aspect-ratio: 16 / 9;
-      border-radius: 3.2rem;
+      aspect-ratio: auto;
+      border-radius: 2.4rem;
       background: transparent;
 
       img {
         width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: center;
+        height: auto;
+        object-fit: initial;
+        object-position: initial;
+        display: block;
       }
     }
   }
@@ -309,16 +310,18 @@
     }
 
     .project-visual {
-      aspect-ratio: 16 / 9;
+      width: 100%;
       height: auto;
+      aspect-ratio: auto;
       border-radius: 2.4rem;
       background: transparent;
 
       img {
         width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: center;
+        height: auto;
+        object-fit: initial;
+        object-position: initial;
+        display: block;
       }
     }
   }
