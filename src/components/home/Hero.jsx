@@ -8,6 +8,7 @@ import HeroOrbit from "../animation/HeroOrbit"
 import GatsbyStars from "../animation/GatsbyStars"
 
 import useSmoothScroll from "../../hook/useSmoothScroll"
+import { useTheme } from "../../context/ThemeContext"
 
 const MouseCamera = () => {
   useFrame((state) => {
@@ -24,14 +25,17 @@ const MouseCamera = () => {
 
 const Hero = () => {
   const scrollTo = useSmoothScroll()
+  const { theme } = useTheme()
+
+  const isDark = theme === "dark"
 
   return (
     <section id="hero" className="hero-section">
       <div className="hero-bg" aria-hidden="true">
         <Canvas className="canvas" camera={{ position: [0, 0, 5], fov: 65 }}>
-          <color attach="background" args={["#eef6ff"]} />
+          <color attach="background" args={[isDark ? "#0c0c0c" : "#eef6ff"]} />
 
-          <GatsbyStars color="#2a5fea" />
+          <GatsbyStars color={isDark ? "#47FF97" : "#2a5fea"} />
         </Canvas>
       </div>
 
@@ -77,8 +81,14 @@ const Hero = () => {
             <ambientLight intensity={0.7} />
             <pointLight position={[10, 10, 10]} intensity={1.5} />
 
-            {/* <Box position={[0, 0, 0]} scale={0.75} /> */}
-            <HeroOrbit />
+            <HeroOrbit
+              glowColor={isDark ? "#47FF97" : "#68d8ff"}
+              coreColor={isDark ? "#d8ffe9" : "#c9f5ff"}
+              coreEmissive={isDark ? "#47FF97" : "#55cfff"}
+              shellColor={isDark ? "#25d873" : "#2f8cff"}
+              edgeColor={isDark ? "#b8ffd4" : "#b9efff"}
+              outerGlowColor={isDark ? "#47FF97" : "#1f8cff"}
+            />
           </Canvas>
         </div>
       </div>

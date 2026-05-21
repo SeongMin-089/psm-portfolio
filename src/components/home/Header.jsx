@@ -59,7 +59,10 @@ const Header = () => {
               setMenuOpen(false)
             }}
           >
-            <img src="/img/logo.svg" alt="박성민 포트폴리오 로고" />
+            <img
+              src={theme === "dark" ? "/img/logo-dark.svg" : "/img/logo.svg"}
+              alt="박성민 포트폴리오 로고"
+            />
           </a>
           <h1>PSM Portfolio</h1>
         </div>

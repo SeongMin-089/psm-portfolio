@@ -214,28 +214,6 @@
   }
 }
 
-[data-theme="dark"] {
-  #Project {
-    .project-info {
-      background: rgba(255, 255, 255, 0.04);
-      border-color: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 2.4rem 7rem rgba(0, 0, 0, 0.2);
-    }
-
-    .project-category,
-    .project-icon,
-    .tags span {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(255, 255, 255, 0.08);
-    }
-
-    .project-visual {
-      background: rgba(255, 255, 255, 0.04);
-      box-shadow: 0 2.4rem 7rem rgba(0, 0, 0, 0.22);
-    }
-  }
-}
-
 @media screen and (max-width: 1200px) {
   #Project {
     .section-badge {
@@ -323,6 +301,101 @@
         object-position: initial;
         display: block;
       }
+    }
+  }
+}
+
+[data-theme="dark"] {
+  #Project {
+    .section-badge {
+      background: rgba(71, 255, 151, 0.08);
+      border-color: rgba(71, 255, 151, 0.22);
+      color: var(--primary);
+      box-shadow: none;
+
+      .section-badge-dot {
+        background: var(--primary);
+        box-shadow: 0 0 1.2rem rgba(71, 255, 151, 0.45);
+      }
+    }
+
+    .project-title-box {
+      h2 {
+        color: var(--text);
+      }
+
+      p {
+        color: var(--gray600);
+      }
+    }
+
+    .project-info {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.08);
+      box-shadow: none;
+
+      &:hover {
+        box-shadow: 0 0 3rem rgba(71, 255, 151, 0.08);
+        border-color: rgba(71, 255, 151, 0.18);
+      }
+    }
+
+    .project-category {
+      background: rgba(71, 255, 151, 0.08);
+      border-color: rgba(71, 255, 151, 0.22);
+      color: var(--primary);
+    }
+
+    .project-icon {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.08);
+
+      img {
+        filter: brightness(0) saturate(100%) invert(96%) sepia(8%)
+          saturate(526%) hue-rotate(84deg) brightness(106%) contrast(101%);
+      }
+    }
+
+    .project-text {
+      h3 {
+        color: var(--text);
+      }
+
+      p {
+        color: var(--gray600);
+      }
+    }
+
+    .tags {
+      span {
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(255, 255, 255, 0.08);
+        color: var(--gray600);
+      }
+
+      img {
+        filter: brightness(1.3) saturate(1.25);
+      }
+    }
+
+    .project-bottom {
+      border-top-color: rgba(255, 255, 255, 0.08);
+
+      .project-summary {
+        color: var(--gray600);
+
+        img {
+          filter: brightness(1.3) saturate(1.25);
+        }
+      }
+
+      strong {
+        color: var(--primary);
+      }
+    }
+
+    .project-visual {
+      background: transparent;
     }
   }
 }

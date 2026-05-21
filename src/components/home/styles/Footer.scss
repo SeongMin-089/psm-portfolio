@@ -7,6 +7,7 @@ footer {
     margin: auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: var(--gray600);
     font-size: clamp(1.2rem, 1.4vw, 1.6rem);
 
@@ -21,10 +22,51 @@ footer {
       text-align: center;
     }
 
+    .left {
+      p {
+        color: inherit;
+        line-height: 1.6;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gray600);
+        transition:
+          color 0.3s ease,
+          transform 0.3s ease;
+
+        &:hover {
+          color: #2a5fea;
+          transform: translateY(-0.3rem);
+        }
+      }
+    }
+  }
+}
+
+[data-theme="dark"] {
+  footer {
+    background: linear-gradient(180deg, #0c0c0c 0%, #111111 100%);
+
+    .inner {
+      color: var(--gray600);
+    }
+
     .right {
       a {
-        display: inline-block;
-        margin-left: 2rem;
+        color: var(--gray600);
+
+        &:hover {
+          color: var(--primary);
+        }
       }
     }
   }

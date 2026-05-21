@@ -66,7 +66,7 @@
   .input-wrap {
     position: relative;
     margin: 1rem 0;
-    
+
     img {
       position: absolute;
       left: 1.8rem;
@@ -96,7 +96,7 @@
       }
 
       &:focus {
-        border-color: #3B82F6;
+        border-color: #3b82f6;
         background-color: #fff;
         box-shadow: 0 0 0 0.4rem rgba(99, 102, 241, 0.08);
       }
@@ -161,7 +161,7 @@
     a {
       min-height: 7.2rem;
       padding: 1.6rem;
-      border: .1rem solid #e2e8f0;
+      border: 0.1rem solid #e2e8f0;
       border-radius: 1.6rem;
       background-color: #f8fafc;
       text-decoration: none;
@@ -217,7 +217,7 @@
     font-style: normal;
     font-size: 1.3rem;
     font-weight: 800;
-    color: #3B82F6;
+    color: #3b82f6;
   }
 }
 
@@ -236,44 +236,6 @@
 .send-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
-}
-
-[data-theme="dark"] {
-  #Contact {
-    .contact-form,
-    .contact-info {
-      background: rgba(255, 255, 255, 0.04);
-      border-color: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 2.4rem 7rem rgba(0, 0, 0, 0.2);
-    }
-
-    .form-group {
-      input,
-      textarea {
-        background: rgba(255, 255, 255, 0.06);
-        border-color: rgba(255, 255, 255, 0.08);
-
-        &:focus {
-          background: rgba(255, 255, 255, 0.08);
-        }
-      }
-    }
-
-    .contact-info {
-      a {
-        background: rgba(255, 255, 255, 0.06);
-
-        &:hover {
-          background: rgba(255, 255, 255, 0.08);
-        }
-      }
-    }
-
-    .info-icon {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(255, 255, 255, 0.08);
-    }
-  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -374,6 +336,140 @@
         font-size: 1.2rem;
         word-break: break-all;
       }
+    }
+  }
+}
+
+[data-theme="dark"] {
+  #Contact {
+    .contact-head {
+      .section-badge {
+        background: rgba(71, 255, 151, 0.08);
+        border-color: rgba(71, 255, 151, 0.22);
+        color: var(--primary);
+        box-shadow: none;
+
+        .section-badge-dot {
+          background: var(--primary);
+          box-shadow: 0 0 1.2rem rgba(71, 255, 151, 0.45);
+        }
+      }
+
+      h2 {
+        color: var(--text);
+      }
+    }
+
+    .contact-form,
+    .contact-info {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.08);
+      box-shadow: none;
+    }
+
+    .contact-card-title {
+      h3 {
+        color: var(--text);
+      }
+
+      p {
+        color: var(--gray600);
+      }
+    }
+
+    label {
+      color: var(--gray600);
+    }
+
+    .input-wrap {
+      img {
+        opacity: 0.75;
+        filter: brightness(0) saturate(100%) invert(96%) sepia(8%)
+          saturate(526%) hue-rotate(84deg) brightness(106%) contrast(101%);
+      }
+
+      input,
+      textarea {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(255, 255, 255, 0.08);
+
+        &::placeholder {
+          color: rgba(240, 240, 240, 0.38);
+        }
+
+        &:focus {
+          background: rgba(255, 255, 255, 0.06);
+          border-color: rgba(71, 255, 151, 0.45);
+          box-shadow: 0 0 0 0.4rem rgba(71, 255, 151, 0.08);
+        }
+      }
+    }
+
+    .send-btn {
+      color: #0c0c0c;
+      background: var(--primary);
+      box-shadow: 0 0 2.8rem rgba(71, 255, 151, 0.18);
+
+      &:hover {
+        box-shadow: 0 0 3.6rem rgba(71, 255, 151, 0.26);
+      }
+
+      &:disabled {
+        opacity: 0.55;
+      }
+    }
+
+    .contact-info {
+      h3 {
+        color: var(--text);
+      }
+
+      a {
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(255, 255, 255, 0.08);
+
+        &:hover {
+          background: rgba(71, 255, 151, 0.08);
+          border-color: rgba(71, 255, 151, 0.18);
+          box-shadow: 0 0 3rem rgba(71, 255, 151, 0.08);
+        }
+      }
+    }
+
+    .info-icon {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.08);
+
+      img {
+        filter: brightness(1.3) saturate(1.25);
+      }
+
+      img[src="/img/github.svg"] {
+        filter: brightness(0) invert(1);
+      }
+    }
+
+    .info-text {
+      strong {
+        color: var(--text);
+      }
+
+      p {
+        color: var(--gray600);
+      }
+    }
+
+    em {
+      color: var(--primary);
+    }
+
+    .form-success {
+      color: var(--primary);
+    }
+
+    .form-error {
+      color: #ff6b6b;
     }
   }
 }

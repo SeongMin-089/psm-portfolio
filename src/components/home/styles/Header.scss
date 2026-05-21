@@ -2,7 +2,9 @@ header {
   position: fixed;
   z-index: 5;
   width: 100%;
-  transition: all 0.3s;
+  // transition:
+  //   background-color 0.3s ease,
+  //   backdrop-filter 0.3s ease;
   background-color: #eef6ff;
 
   .fixed-top {
@@ -11,7 +13,10 @@ header {
     bottom: 15rem;
     cursor: pointer;
     color: #2a5fea;
-    transition: all 0.3s;
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease,
+      opacity 0.3s ease;
     transform: translateY(3rem);
     opacity: 0;
   }
@@ -55,6 +60,7 @@ header {
         font-size: clamp(1.2rem, 5vw, 2.4rem);
         font-weight: 900;
         color: #2e3d5c;
+        transition: color 0.3s ease;
       }
     }
 
@@ -81,7 +87,11 @@ header {
           background-color: var(--gray700);
           left: 0;
           display: block;
-          transition: all 0.3s;
+          transition:
+            background-color 0.3s ease,
+            transform 0.3s ease,
+            top 0.3s ease,
+            opacity 0.3s ease;
 
           &:nth-child(1) {
             top: 0;
@@ -107,6 +117,14 @@ header {
         font-size: 1.6rem;
         font-weight: 500;
         color: var(--gray700);
+        transition: color 0.3s ease;
+
+        li {
+          a {
+            color: inherit;
+            transition: color 0.3s ease;
+          }
+        }
 
         @media screen and (max-width: 768px) {
           position: fixed;
@@ -115,11 +133,16 @@ header {
           text-align: center;
           width: min(28rem, 72vw);
           right: -110%;
-          transition: right 0.3s ease-in-out;
+          transition:
+            right 0.3s ease-in-out,
+            background-color 0.3s ease,
+            border-color 0.3s ease,
+            box-shadow 0.3s ease;
 
           > li {
             position: relative;
             background-color: var(--gray100);
+            transition: background-color 0.3s ease;
 
             > a {
               padding: 2rem 0;
@@ -136,6 +159,7 @@ header {
               left: 0;
               top: 0;
               background-color: var(--primary200);
+              transition: background-color 0.3s ease;
             }
 
             &:hover {
@@ -156,6 +180,17 @@ header {
           }
         }
       }
+
+      .btn {
+        min-width: 3.2rem;
+        flex-shrink: 0;
+        border: 0.1rem solid transparent;
+        transition:
+          color 0.3s ease,
+          background-color 0.3s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
     }
   }
 
@@ -167,10 +202,12 @@ header {
             transform: rotate(45deg);
             top: 1.1rem;
           }
+
           span:nth-child(2) {
             transform: translateX(100%);
             opacity: 0;
           }
+
           span:nth-child(3) {
             transform: rotate(-45deg);
             top: 1.1rem;
@@ -179,6 +216,99 @@ header {
 
         nav ul {
           right: 0;
+        }
+      }
+    }
+  }
+}
+
+[data-theme="dark"] {
+  header {
+    background: rgba(12, 12, 12, 0.82);
+    backdrop-filter: blur(1.6rem);
+
+    &.scroll {
+      .inner {
+        border-bottom-color: var(--underline);
+      }
+    }
+
+    .fixed-top {
+      color: var(--primary);
+    }
+
+    .inner {
+      .left-wrap {
+        h1 {
+          color: var(--text);
+        }
+      }
+
+      .right-wrap {
+        .mob-nav-btn {
+          span {
+            background-color: var(--text);
+          }
+        }
+
+        nav ul {
+          color: var(--gray700);
+
+          li {
+            &:hover {
+              color: var(--primary);
+            }
+          }
+
+          @media screen and (max-width: 768px) {
+            background: rgba(12, 12, 12, 0.92);
+            border: 0.1rem solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.6rem;
+            overflow: hidden;
+            box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.28);
+
+            > li {
+              background: rgba(255, 255, 255, 0.04);
+
+              > a {
+                color: var(--text);
+              }
+
+              &::after {
+                background: rgba(71, 255, 151, 0.42);
+              }
+
+              &:hover {
+                background: rgba(71, 255, 151, 0.1);
+
+                > a {
+                  color: var(--primary);
+                }
+
+                &::after {
+                  background: var(--primary);
+                }
+              }
+            }
+
+            > li + li {
+              border-top-color: rgba(255, 255, 255, 0.08);
+            }
+          }
+        }
+
+        .btn {
+          color: var(--primary);
+          border-color: rgba(71, 255, 151, 0.45);
+          background: rgba(71, 255, 151, 0.08);
+          box-shadow: 0 0 2.4rem rgba(71, 255, 151, 0.12);
+
+          &:hover {
+            color: var(--primary);
+            border-color: rgba(71, 255, 151, 0.7);
+            background: rgba(71, 255, 151, 0.12);
+            box-shadow: 0 0 3rem rgba(71, 255, 151, 0.18);
+          }
         }
       }
     }

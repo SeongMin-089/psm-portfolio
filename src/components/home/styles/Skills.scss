@@ -132,35 +132,6 @@
   }
 }
 
-[data-theme="dark"] {
-  #Skills {
-    .section-badge {
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text);
-      box-shadow: none;
-    }
-
-    .skill-card {
-      background: rgba(255, 255, 255, 0.04);
-      box-shadow: none;
-
-      .skill-card-title {
-        strong {
-          color: var(--text);
-        }
-      }
-    }
-
-    .circle-line {
-      border-color: rgba(71, 255, 151, 0.16);
-
-      &::after {
-        border-color: rgba(71, 255, 151, 0.1);
-      }
-    }
-  }
-}
-
 @media screen and (max-width: 1200px) {
   #Skills {
     .skills-card-wrap {
@@ -212,6 +183,67 @@
 
     .skill-card {
       border-radius: 1.6rem;
+    }
+  }
+}
+
+[data-theme="dark"] {
+  #Skills {
+    .section-badge {
+      background: rgba(71, 255, 151, 0.08);
+      border-color: rgba(71, 255, 151, 0.22);
+      color: var(--primary);
+      box-shadow: none;
+
+      .section-badge-dot {
+        background: var(--primary);
+        box-shadow: 0 0 1.2rem rgba(71, 255, 151, 0.45);
+      }
+    }
+
+    .skills-title-box {
+      p {
+        color: var(--gray600);
+      }
+    }
+
+    .skill-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.08);
+      box-shadow: none;
+
+      .skill-card-title {
+        border-bottom-color: rgba(255, 255, 255, 0.08);
+
+        .skill-title-icon { 
+          filter: brightness(0) saturate(100%) invert(96%) sepia(8%)
+            saturate(526%) hue-rotate(84deg) brightness(106%) contrast(101%);
+        }
+
+        strong {
+          color: var(--text);
+        }
+      }
+
+      li {
+        color: var(--gray600);
+
+        .skill-icon {
+          filter: brightness(1.3) saturate(1.25);
+        }
+
+        .skill-icon[alt="GitHub / Git"] {
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+
+    .circle-line {
+      border-color: rgba(71, 255, 151, 0.16);
+
+      &::after {
+        border-color: rgba(71, 255, 151, 0.1);
+      }
     }
   }
 }

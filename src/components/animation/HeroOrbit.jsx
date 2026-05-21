@@ -1,9 +1,16 @@
-import React, { useRef } from 'react'
-import { useFrame } from '@react-three/fiber'
-import { Edges, Float } from '@react-three/drei'
-import * as THREE from 'three'
+import React, { useRef } from "react"
+import { useFrame } from "@react-three/fiber"
+import { Edges, Float } from "@react-three/drei"
+import * as THREE from "three"
 
-const HeroOrbit = () => {
+const HeroOrbit = ({
+  glowColor = "#68d8ff",
+  coreColor = "#c9f5ff",
+  coreEmissive = "#55cfff",
+  shellColor = "#2f8cff",
+  edgeColor = "#b9efff",
+  outerGlowColor = "#1f8cff",
+}) => {
   const groupRef = useRef(null)
   const coreRef = useRef(null)
   const shellRef = useRef(null)
@@ -45,7 +52,7 @@ const HeroOrbit = () => {
         <mesh ref={glowRef} scale={[1.25, 1.25, 1.25]}>
           <sphereGeometry args={[0.72, 64, 64]} />
           <meshBasicMaterial
-            color="#68d8ff"
+            color={glowColor}
             transparent
             opacity={0.22}
             depthWrite={false}
@@ -57,8 +64,8 @@ const HeroOrbit = () => {
         <mesh ref={coreRef} scale={[0.62, 0.62, 0.62]}>
           <icosahedronGeometry args={[1, 1]} />
           <meshStandardMaterial
-            color="#c9f5ff"
-            emissive="#55cfff"
+            color={coreColor}
+            emissive={coreEmissive}
             emissiveIntensity={1.45}
             roughness={0.22}
             metalness={0.08}
@@ -70,7 +77,7 @@ const HeroOrbit = () => {
         <mesh ref={shellRef} scale={[1, 1, 1]}>
           <icosahedronGeometry args={[1, 1]} />
           <meshPhysicalMaterial
-            color="#2f8cff"
+            color={shellColor}
             transparent
             opacity={0.22}
             roughness={0.12}
@@ -84,7 +91,7 @@ const HeroOrbit = () => {
           />
 
           <Edges
-            color="#b9efff"
+            color={edgeColor}
             linewidth={1.15}
             transparent
             opacity={0.55}
@@ -95,7 +102,7 @@ const HeroOrbit = () => {
         <mesh scale={[1.55, 1.55, 1.55]}>
           <sphereGeometry args={[0.8, 64, 64]} />
           <meshBasicMaterial
-            color="#1f8cff"
+            color={outerGlowColor}
             transparent
             opacity={0.075}
             depthWrite={false}
