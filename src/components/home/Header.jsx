@@ -37,56 +37,61 @@ const Header = () => {
   }, [])
 
   useEffect(() => {
-    const onKey = (e) => e.key == "Escape" && setMenuOpen(false)
+    const onKey = (e) => e.key === "Escape" && setMenuOpen(false)
 
     document.addEventListener("keydown", onKey)
     return () => document.removeEventListener("keydown", onKey)
   }, [])
 
   return (
-    <header
-      className={`${scrolled ? "scroll" : "hero-mode"} ${menuOpen ? "is-open" : ""} `}
-    >
-      <div className="inner">
-        <div className="left-wrap">
-          <a
-            href="#hero"
-            className="logo"
-            aria-label="홈으로 이동"
-            onClick={(e) => {
-              e.preventDefault()
-              scrollTo("hero")
-              setMenuOpen(false)
-            }}
-          >
-            <img
-              src={theme === "dark" ? "/img/logo-dark.svg" : "/img/logo.svg"}
-              alt="박성민 포트폴리오 로고"
-            />
-          </a>
-          <h1>PSM Portfolio</h1>
-        </div>
+    <>
+      <header
+        className={`${scrolled ? "scroll" : "hero-mode"} ${menuOpen ? "is-open" : ""}`}
+      >
+        <div className="inner">
+          <div className="left-wrap">
+            <a
+              href="#hero"
+              className="logo"
+              aria-label="홈으로 이동"
+              onClick={(e) => {
+                e.preventDefault()
+                scrollTo("hero")
+                setMenuOpen(false)
+              }}
+            >
+              <img
+                src={theme === "dark" ? "/img/logo-dark.svg" : "/img/logo.svg"}
+                alt="박성민 포트폴리오 로고"
+              />
+            </a>
+            <h1>PSM Portfolio</h1>
+          </div>
 
-        <div className="right-wrap">
-          <button
-            type="button"
-            onClick={() => setMenuOpen((v) => !v)}
-            className="mob-nav-btn"
-            aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
-            aria-expanded={menuOpen}
-          >
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-          </button>
-          <Nav />
-          <button className="btn" onClick={toggleTheme}>
-            {theme === "light" ? "L" : "D"}
-          </button>
+          <div className="right-wrap">
+            <button
+              type="button"
+              onClick={() => setMenuOpen((v) => !v)}
+              className="mob-nav-btn"
+              aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
+              aria-expanded={menuOpen}
+            >
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+            </button>
+
+            <Nav />
+
+            <button className="btn" onClick={toggleTheme}>
+              {theme === "light" ? "L" : "D"}
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
+
       <FixedTop />
-    </header>
+    </>
   )
 }
 

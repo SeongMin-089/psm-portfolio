@@ -1,4 +1,5 @@
 import React from "react"
+import { motion } from "framer-motion"
 import miniProjects from "../../utils/miniProject"
 import "./styles/MiniProject.scss"
 
@@ -9,10 +10,51 @@ const MiniProject = () => {
   const leftProjects = normalProjects.filter((_, index) => index % 2 === 0)
   const rightProjects = normalProjects.filter((_, index) => index % 2 === 1)
 
+  const sectionVariants = {
+    hidden: {
+      opacity: 0,
+      y: 36,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.9,
+        ease: "easeOut",
+      },
+    },
+  }
+
+  const cardWrapVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.18,
+        delayChildren: 0.2,
+      },
+    },
+  }
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 28,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  }
+
   const renderMiniCard = (project, index) => (
-    <a
+    <motion.a
       href={project.link}
       className={`mini-card ${project.wide ? "wide" : ""}`}
+      variants={cardVariants}
       key={project.id}
       target="_blank"
       rel="noreferrer"
@@ -47,11 +89,17 @@ const MiniProject = () => {
 
         <strong>MINI {String(index + 1).padStart(2, "0")}</strong>
       </div>
-    </a>
+    </motion.a>
   )
 
   return (
-    <section id="MiniProject">
+    <motion.section
+      id="MiniProject"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="inner mini-inner">
         <div className="section-badge">
           <span className="section-badge-dot"></span>
@@ -63,7 +111,7 @@ const MiniProject = () => {
           <p>간단한 구현을 정리했습니다.</p>
         </div>
 
-        <div className="mini-card-wrap">
+        <motion.div className="mini-card-wrap" variants={cardWrapVariants}>
           <div className="mini-column">
             {leftProjects.map((project) =>
               renderMiniCard(
@@ -88,9 +136,9 @@ const MiniProject = () => {
               miniProjects.findIndex((item) => item.id === project.id)
             )
           )}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

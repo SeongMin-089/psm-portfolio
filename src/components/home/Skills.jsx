@@ -1,10 +1,57 @@
 import React from "react"
+import { motion } from "framer-motion"
 import "./styles/Skills.scss"
 import skills from "../../utils/skill"
 
 const Skills = () => {
+  const sectionVariants = {
+    hidden: {
+      opacity: 0,
+      y: 36,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.9,
+        ease: "easeOut",
+      },
+    },
+  }
+
+  const cardWrapVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.18,
+        delayChildren: 0.2,
+      },
+    },
+  }
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 28,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  }
+
   return (
-    <section id="Skills">
+    <motion.section
+      id="Skills"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="inner skills-inner">
         <div className="circle-line circle-left"></div>
         <div className="circle-line circle-right"></div>
@@ -19,15 +66,15 @@ const Skills = () => {
           <p>{skills.description}</p>
         </div>
 
-        <div className="skills-card-wrap">
+        <motion.div className="skills-card-wrap" variants={cardWrapVariants}>
           {skills.categories.map((category) => (
-            <article className="skill-card" key={category.title}>
+            <motion.article
+              className="skill-card"
+              variants={cardVariants}
+              key={category.title}
+            >
               <div className="skill-card-title">
-                <img
-                  src={category.icon}
-                  alt=""
-                  className="skill-title-icon"
-                />
+                <img src={category.icon} alt="" className="skill-title-icon" />
                 <strong>{category.title}</strong>
               </div>
 
@@ -43,11 +90,11 @@ const Skills = () => {
                   </li>
                 ))}
               </ul>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

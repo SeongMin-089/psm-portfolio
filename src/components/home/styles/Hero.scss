@@ -3,7 +3,6 @@
   min-height: 100vh;
   overflow: hidden;
   background: #eef6ff;
-  
 }
 
 .hero-bg {
@@ -108,12 +107,12 @@
   }
 
   @media screen and (max-width: 1280px) {
-    gap: 0;
+    gap: 4rem;
 
     .hero-content {
-      flex: 0 0 70%;
+      flex: 0 0 62%;
       position: relative;
-      z-index: 3;
+      z-index: 2;
     }
 
     h1.tit {
@@ -138,22 +137,52 @@
     }
 
     .hero-visual {
-      position: absolute;
-      width: clamp(36rem, 36vw, 48rem);
-      height: clamp(36rem, 36vw, 48rem);
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      opacity: 0.68;
+      flex: 0 0 34%;
+      position: relative;
+      width: auto;
+      height: clamp(32rem, 34vw, 48rem);
+      right: auto;
+      top: auto;
+      bottom: auto;
+      transform: none;
+      opacity: 1;
       z-index: 1;
     }
   }
 
   @media screen and (max-width: 1024px) {
-    .hero-content {
-      flex: 0 0 78%;
+    height: auto;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2.8rem;
+    padding-top: 10rem;
+    padding-bottom: 6rem;
+    overflow: hidden;
+
+    .hero-visual {
+      order: -1;
+      align-self: center;
+      flex: none;
       position: relative;
-      z-index: 3;
+      width: clamp(30rem, 46vw, 42rem);
+      height: clamp(30rem, 46vw, 42rem);
+      right: auto;
+      top: auto;
+      bottom: auto;
+      transform: none;
+      opacity: 1;
+      z-index: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 72rem;
+      flex: none;
+      position: relative;
+      z-index: 2;
     }
 
     h1.tit {
@@ -178,33 +207,32 @@
         font-size: 1.8rem;
       }
     }
-
-    .hero-visual {
-      width: clamp(34rem, 42vw, 42rem);
-      height: clamp(34rem, 42vw, 42rem);
-      right: -2rem;
-      top: 50%;
-      transform: translateY(-50%);
-      opacity: 0.45;
-      z-index: 1;
-    }
   }
 
   @media screen and (max-width: 768px) {
-    height: 100svh;
-    min-height: 72rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 0;
-    overflow: hidden;
+    min-height: 100svh;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 8.8rem;
+    padding-bottom: 5rem;
+    gap: 2.4rem;
+
+    .hero-visual {
+      order: -1;
+      align-self: center;
+      width: clamp(26rem, 58vw, 34rem);
+      height: clamp(26rem, 58vw, 34rem);
+      margin-bottom: 0;
+      opacity: 1;
+    }
 
     .hero-content {
       width: 100%;
       max-width: 68rem;
       position: relative;
-      z-index: 3;
-      transform: translateY(-2rem);
+      z-index: 2;
+      transform: none;
     }
 
     h1.tit {
@@ -231,25 +259,21 @@
         font-size: 1.7rem;
       }
     }
-
-    .hero-visual {
-      position: absolute;
-      width: 36rem;
-      height: 36rem;
-      right: -3rem;
-      top: 50%;
-      bottom: auto;
-      transform: translateY(-50%);
-      opacity: 0.26;
-      z-index: 1;
-    }
   }
 
   @media screen and (max-width: 599px) {
-    min-height: 68rem;
+    min-height: 72rem;
+    padding-top: 8rem;
+    padding-bottom: 4.8rem;
+    gap: 2rem;
+
+    .hero-visual {
+      width: clamp(23rem, 64vw, 30rem);
+      height: clamp(23rem, 64vw, 30rem);
+    }
 
     .hero-content {
-      transform: translateY(-1rem);
+      transform: none;
     }
 
     h1.tit {
@@ -276,23 +300,21 @@
         border-radius: 999px;
       }
     }
-
-    .hero-visual {
-      width: 32rem;
-      height: 32rem;
-      right: -3rem;
-      top: 50%;
-      bottom: auto;
-      transform: translateY(-50%);
-      opacity: 0.22;
-    }
   }
 
   @media screen and (max-width: 480px) {
-    min-height: 66rem;
+    min-height: 68rem;
+    padding-top: 7.6rem;
+    padding-bottom: 4.4rem;
+    gap: 1.8rem;
+
+    .hero-visual {
+      width: clamp(21rem, 66vw, 27rem);
+      height: clamp(21rem, 66vw, 27rem);
+    }
 
     .hero-content {
-      transform: translateY(-0.5rem);
+      transform: none;
     }
 
     h1.tit {
@@ -321,23 +343,21 @@
         padding: 0 2rem;
       }
     }
-
-    .hero-visual {
-      width: 29rem;
-      height: 29rem;
-      right: -3rem;
-      top: 50%;
-      bottom: auto;
-      transform: translateY(-50%);
-      opacity: 0.2;
-    }
   }
 
   @media screen and (max-width: 399px) {
-    min-height: 62rem;
+    min-height: 64rem;
+    padding-top: 7.2rem;
+    padding-bottom: 4rem;
+    gap: 1.6rem;
+
+    .hero-visual {
+      width: clamp(18rem, 64vw, 23rem);
+      height: clamp(18rem, 64vw, 23rem);
+    }
 
     .hero-content {
-      transform: translateY(0);
+      transform: none;
     }
 
     h1.tit {
@@ -359,16 +379,6 @@
         font-size: 1.4rem;
         padding: 0 1.6rem;
       }
-    }
-
-    .hero-visual {
-      width: 26rem;
-      height: 26rem;
-      right: -6.5rem;
-      top: 50%;
-      bottom: auto;
-      transform: translateY(-50%);
-      opacity: 0.18;
     }
   }
 }

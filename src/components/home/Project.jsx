@@ -1,4 +1,5 @@
 import React from "react"
+import { motion } from "framer-motion"
 import projects from "../../utils/project"
 import "./styles/Project.scss"
 import { useTheme } from "../../context/ThemeContext"
@@ -7,8 +8,54 @@ const Project = () => {
   const { theme } = useTheme()
   const isDark = theme === "dark"
 
+  const sectionVariants = {
+    hidden: {
+      opacity: 0,
+      y: 36,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.9,
+        ease: "easeOut",
+      },
+    },
+  }
+
+  const cardWrapVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.18,
+        delayChildren: 0.2,
+      },
+    },
+  }
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 28,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  }
+
   return (
-    <section id="Project">
+    <motion.section
+      id="Project"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="inner project-inner">
         <div className="section-badge">
           <span className="section-badge-dot"></span>
@@ -20,7 +67,7 @@ const Project = () => {
           <p>구현 결과를 정리했습니다.</p>
         </div>
 
-        <div className="project-list">
+        <motion.div className="project-list" variants={cardWrapVariants}>
           {projects.map((project, index) => {
             const thumbnail =
               isDark && project.darkThumbnail
@@ -28,8 +75,9 @@ const Project = () => {
                 : project.thumbnail
 
             return (
-              <article
+              <motion.article
                 className={`project-card ${index % 2 === 1 ? "reverse" : ""}`}
+                variants={cardVariants}
                 key={project.id}
               >
                 <a
@@ -78,12 +126,12 @@ const Project = () => {
                 >
                   <img src={thumbnail} alt={`${project.title} preview`} />
                 </a>
-              </article>
+              </motion.article>
             )
           })}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

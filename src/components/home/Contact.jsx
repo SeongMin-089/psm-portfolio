@@ -1,12 +1,59 @@
 import React from "react"
+import { motion } from "framer-motion"
 import { useForm } from "@formspree/react"
 import "./styles/Contact.scss"
 
 const Contact = () => {
   const [state, handleSubmit] = useForm(import.meta.env.VITE_FORMSPREE_ID)
 
+  const sectionVariants = {
+    hidden: {
+      opacity: 0,
+      y: 36,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.9,
+        ease: "easeOut",
+      },
+    },
+  }
+
+  const contentVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.18,
+        delayChildren: 0.2,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 28,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  }
+
   return (
-    <section id="Contact">
+    <motion.section
+      id="Contact"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="inner contact-inner">
         <div className="contact-head">
           <div className="section-badge">
@@ -17,8 +64,12 @@ const Contact = () => {
           <h2>Let’s Connect</h2>
         </div>
 
-        <div className="contact-content">
-          <form className="contact-form" onSubmit={handleSubmit}>
+        <motion.div className="contact-content" variants={contentVariants}>
+          <motion.form
+            className="contact-form"
+            variants={itemVariants}
+            onSubmit={handleSubmit}
+          >
             <div className="contact-card-title">
               <h3>Send a Message</h3>
               <p>문의 내용을 남겨주시면 빠르게 답변드리겠습니다.</p>
@@ -93,9 +144,9 @@ const Contact = () => {
                 전송 중 오류가 발생했습니다. 다시 시도해주세요.
               </p>
             )}
-          </form>
+          </motion.form>
 
-          <div className="contact-info">
+          <motion.div className="contact-info" variants={itemVariants}>
             <h3>Information</h3>
 
             <ul>
@@ -152,10 +203,10 @@ const Contact = () => {
                 </a>
               </li>
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 
