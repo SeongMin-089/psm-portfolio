@@ -80,6 +80,23 @@ const miniProjects = [
     link: "https://www.notion.so/30481c8faa3380c7b3f4f9e5a7bb7978?source=copy_link",
     wide: true,
   },
+  {
+  id: 6,
+  title: "MySubscription",
+  category: "CRUD · Search · Filter",
+  description:
+    "여러 구독 서비스를 한 번에 등록하고 관리할 수 있는 구독 관리 서비스입니다. 구독 항목 등록·수정·삭제 기능과 검색, 카테고리 필터, 정렬 기능을 구현했고,\n월 구독료 합계와 결제일 정보를 한눈에 확인할 수 있도록 구성했습니다.",
+  summary: "등록 · 수정 · 삭제 · 월 구독료 계산",
+  icon: "/img/icon-monitor.svg",
+  summaryIcon: "/img/list.svg",
+  tags: [
+    { name: "React", icon: "/img/react.svg" },
+    { name: "Vite", icon: "/img/vite.svg" },
+    { name: "CRUD / LocalStorage" },
+  ],
+  link: "https://app.notion.com/p/AI-37981c8faa3380de833bf8f93dd7c993?source=copy_link",
+  wide: true,
+}
 ]
 
 export default miniProjects

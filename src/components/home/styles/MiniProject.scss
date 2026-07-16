@@ -1,4 +1,6 @@
 #MiniProject {
+  padding-bottom: 12rem;
+
   //   min-height: 155rem;
 
   .mini-inner {
@@ -220,7 +222,7 @@
 
 @media screen and (max-width: 640px) {
   #MiniProject {
-    padding: 8rem 0;
+    padding: 8rem 0 10rem;
 
     .section-badge {
       margin-bottom: 2rem;

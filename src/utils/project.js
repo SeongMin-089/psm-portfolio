@@ -1,6 +1,29 @@
 const projects = [
   {
     id: 1,
+    title: "CoolRoute",
+    category: "Team Project · Cold Chain · Dashboard",
+    description:
+      "콜드체인 물류 기업을 컨셉으로 제작한 팀 프로젝트입니다.\nReact와 TypeScript 기반으로 기업 홍보용 랜딩 페이지와 점주·배송기사·물류센터별 대시보드를 구현했으며,\n팀장으로서 UI 설계, 공통 레이아웃, 로그인, 반응형 작업과 팀원 결과물의 통합 및 보완을 담당했습니다.",
+    summary: "콜드체인 물류 · 역할별 대시보드 · 반응형 웹",
+    summaryIcon: "/img/icon-route.svg",
+    thumbnail: "/img/project-coolroute.png",
+    darkThumbnail: "/img/project-coolroute.png",
+    icon: "/img/icon-logistics.svg",
+    tags: [
+      { name: "React", icon: "/img/react.svg" },
+      { name: "TypeScript", icon: "/img/typescript.svg" },
+      { name: "SCSS", icon: "/img/scss.svg" },
+      { name: "React Router", icon: "/img/router.svg" },
+    ],
+    links: {
+      notion: "https://github.com/SeongMin-089/CoolRoute",
+      demo: "https://cool-route.vercel.app/",
+      github: "https://github.com/SeongMin-089/CoolRoute",
+    },
+  },
+  {
+    id: 2,
     title: "Octalog",
     category: "Fullstack · CRUD · Deploy",
     description:
@@ -25,7 +48,7 @@ const projects = [
     },
   },
   {
-    id: 2,
+    id: 3,
     title: "Wifi Spot",
     category: "Map · Router · Favorites",
     description:
@@ -48,7 +71,7 @@ const projects = [
     },
   },
   {
-    id: 3,
+    id: 4,
     title: "Diptyque UI Clone",
     category: "React · SCSS · Responsive",
     description:
@@ -71,7 +94,7 @@ const projects = [
     },
   },
   {
-    id: 4,
+    id: 5,
     title: "CafeIndex",
     category: "Python · API · Favorites",
     description:

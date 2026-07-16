@@ -25,6 +25,10 @@ const skills = {
           icon: "/img/js.svg",
         },
         {
+          name: "TypeScript",
+          icon: "/img/typescript.svg",
+        },
+        {
           name: "Styling (CSS / SCSS)",
           icon: "/img/css.svg",
         },
