@@ -8,7 +8,7 @@ const projects = [
     summary: "콜드체인 물류 · 역할별 대시보드 · 반응형 웹",
     summaryIcon: "/img/icon-route.svg",
     thumbnail: "/img/project-coolroute.png",
-    darkThumbnail: "/img/project-coolroute.png",
+    darkThumbnail: "/img/project-coolroute-dark.png",
     icon: "/img/icon-logistics.svg",
     tags: [
       { name: "React", icon: "/img/react.svg" },
@@ -31,7 +31,7 @@ const projects = [
     summary: "풀스택 CRUD · 인증 · 이미지 업로드 · 배포",
     summaryIcon: "/img/layer.svg",
     thumbnail: "/img/project-octalog.png",
-    darkThumbnail: "/img/project-octalog.png",
+    darkThumbnail: "/img/project-octalog-dark.png",
     icon: "/img/server.svg",
     tags: [
       { name: "React", icon: "/img/react.svg" },
@@ -66,8 +66,7 @@ const projects = [
     links: {
       notion:
         "https://www.notion.so/WiFi-Spot-31a81c8faa338049be8be905364ad32c?source=copy_link",
-      demo:
-        "https://wifi-spot-lyart.vercel.app/",
+      demo: "https://wifi-spot-lyart.vercel.app/",
     },
   },
   {
@@ -89,8 +88,7 @@ const projects = [
     links: {
       notion:
         "https://www.notion.so/TOCOBO-31181c8faa338023b58ed2defa7497be?source=copy_link",
-      demo:
-        "https://diptyque-clone.vercel.app/",
+      demo: "https://diptyque-clone.vercel.app/",
     },
   },
   {
@@ -112,7 +110,8 @@ const projects = [
       { name: "Naver API", icon: "/img/naver.svg" },
     ],
     links: {
-      notion: "https://app.notion.com/p/36f81c8faa3380c78579d5133b105b0c?source=copy_link",
+      notion:
+        "https://app.notion.com/p/36f81c8faa3380c78579d5133b105b0c?source=copy_link",
       demo: "https://python-web-scraping.vercel.app",
       github: "https://github.com/SeongMin-089/python-WebScraping",
     },
